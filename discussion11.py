@@ -67,7 +67,7 @@ def add_pets_from_json(filename, cur, conn):
     file_data = f.read()
     f.close()
     json_data = json.loads(file_data)
-    print(json_data)
+    #print(json_data)
 
     # THE REST IS UP TO YOU
     pass
