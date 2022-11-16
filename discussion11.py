@@ -42,7 +42,7 @@ def create_species_table(cur, conn):
 #Pet id, name (string), species_id (number), age (integer), cuteness (integer), aggressiveness (number)
 def create_patients_table(cur, conn):
     cur.execute("DROP TABLE IF EXISTS Patients")
-    cur.execute("CREATE TABLE Patients (pet_id INTEGER PRIMARY KEY, species_id INTERGER, name TEXT, \
+    cur.execute("CREATE TABLE Patients (pet_id INTEGER PRIMARY KEY, name TEXT, species_id INTERGER, \
         age INTEGER, cuteness INTEGER, agressiveness INTEGER)")
 
     conn.commit()
@@ -67,9 +67,14 @@ def add_pets_from_json(filename, cur, conn):
     file_data = f.read()
     f.close()
     json_data = json.loads(file_data)
-    #print(json_data)
+    print(json_data)
 
     # THE REST IS UP TO YOU
+    #name': 'Kerfluffle', 'species': 'Hare', 'age': '12', 'cuteness': '0', 'aggressiveness': '9900'
+    for i in json_data:
+        pet_id = ("SELECT")
+        cur.execute("INSERT INTO Patients (pet_id, name, species_id, age, cuteness,\
+             agressiveness) VALUES (?,?,?,?,?,?)",("0","Fluffle","0","3", "90", "100"))
     pass
 
 
